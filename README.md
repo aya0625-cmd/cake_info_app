@@ -9,10 +9,10 @@
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 |phone_number|integer|null: false, unique: true|
-|prefecture_id|int|
-|city|varchar|
-|block|varchar|
-|building|varchar|
+|prefecture_id|int|null: false|
+|city|varchar|null: false|
+|block|varchar|null: false|
+|building|varchar|null: false|
 
 
 ## productsテーブル
