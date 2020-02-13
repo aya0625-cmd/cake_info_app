@@ -1,24 +1,40 @@
-# README
+# DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|birthday|date|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
+|phone_number|integer|null: false, unique: true|
+|prefecture_id|int|
+|city|varchar|
+|block|varchar|
+|building|varchar|
 
-* Ruby version
 
-* System dependencies
+## productsテーブル
 
-* Configuration
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|image|text||
+|store|references|null: false, foreign_key: true|
+|price|integer|null: false|
 
-* Database creation
+### Association
+- belongs_to :store
 
-* Database initialization
 
-* How to run the test suite
+## storesテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|image|text||
 
-* Deployment instructions
+### Association
+- has_many :products
 
-* ...
