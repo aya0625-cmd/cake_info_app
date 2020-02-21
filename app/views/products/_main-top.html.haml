@@ -1,0 +1,32 @@
+#navArea
+  %nav
+    .inner
+      %ul
+        %li
+          %a{href: "#"}
+            町のケーキ屋さんの思い
+        %li
+          %a{href: "#"}
+            予約
+        %li
+          %a{href: "#"}
+            検索
+        %li
+          %a{href: "#"} 
+            ログイン
+        %li
+          %a{href: "#"} 
+            新規登録
+  .toggle_btn
+    %span
+    %span
+    %span
+  #mask
+  %main
+    =image_tag 'brooke-lark-ZkgWJ4BfgsE-unsplash.jpg', alt: '', height: '100%', width: '100%', class: 'main__image'
+    %p
+      ケーキであなたを笑顔にしたい。
+    .main-top
+      =link_to "#" do
+        =icon('fas','globe')  
+

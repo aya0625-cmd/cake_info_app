@@ -9,10 +9,9 @@
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 |phone_number|integer|null: false, unique: true|
-|prefecture_id|int|null: false|
-|city|varchar|null: false|
-|block|varchar|null: false|
-|building|varchar|null: false|
+ 
+ ### Association
+- has_many :reservations
 
 
 ## productsテーブル
@@ -26,6 +25,7 @@
 
 ### Association
 - belongs_to :store
+- has_many :reservations
 
 
 ## storesテーブル
@@ -38,3 +38,16 @@
 ### Association
 - has_many :products
 
+
+## reservationsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|date|date|null: false|
+|time|integer|null: false|
+|user|references|null: false, foreign_key: true|
+|product|references|null: false, foreign_key: true|
+
+### Association
+- belong_to :user
+- belong_to :product
