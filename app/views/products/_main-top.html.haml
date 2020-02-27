@@ -2,21 +2,31 @@
   %nav
     .inner
       %ul
-        %li
+        %li.inner-edit
           %a{href: "#"}
             町のケーキ屋さんの思い
-        %li
+        %li.inner-edit
           %a{href: "#"}
-            予約
-        %li
+            予約する
+        %li.inner-edit
           %a{href: "#"}
-            検索
-        %li
-          %a{href: "#"} 
-            ログイン
-        %li
-          %a{href: "#"} 
-            新規登録
+            予約履歴
+        %li.inner-edit
+          %a{href: "#"}
+            ケーキ検索
+        %div.inner-edit
+          -if user_signed_in?
+            %li.inner-edit.user-nav
+              =link_to "ログアウト", destroy_user_session_path, method: :delete, class: "inner_edit_link" 
+            %li.inner-edit.user-nav
+              =link_to "アカウント編集", edit_user_path(current_user), class: "inner_edit_link" 
+          -else
+            %li.inner-edit
+              =link_to "ログイン", new_user_session_path, class: "inner-edit_link" 
+            %li.inner-edit
+              =link_to "新規登録", new_user_registration_path, class: "inner-edit_link" 
+              
+                
   .toggle_btn
     %span
     %span
@@ -25,7 +35,7 @@
   %main
     =image_tag 'brooke-lark-ZkgWJ4BfgsE-unsplash.jpg', alt: '', height: '100%', width: '100%', class: 'main__image'
     %p
-      ケーキであなたを笑顔にしたい。
+      あなたを笑顔にするスイーツ。
     .main-top
       =link_to "#" do
         =icon('fas','globe')  

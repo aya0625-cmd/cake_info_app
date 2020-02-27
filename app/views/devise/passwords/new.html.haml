@@ -1,0 +1,19 @@
+#account-page.account-page
+  .account-page__inner.clearfix
+    .account-page__inner--left.account-page__header
+      %h2 パスワード忘れた方へ
+      %h4 以下の欄に登録したメールアドレスを入力してください。 
+          
+      
+    .account-page__inner--right.user-form
+      = form_for(resource, as: resource_name, url: password_path(resource_name), method: :post ) do |f|
+        = devise_error_messages!
+        .field
+          .field-label
+            =f.label :email
+          .field-input
+            =f.email_field :email, autofocus: true, autocomplete: "email"
+        .actions
+          =f.submit "パスワード再設定メールを送る", class: "btn"
+          
+
