@@ -188,6 +188,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.13)
   byebug
   coffee-rails (~> 4.2)
   devise

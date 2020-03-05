@@ -1,0 +1,43 @@
+.search-store
+  .search-store__box
+    %p.main-top__header__title
+      菓子ログ
+    =form_tag(search_stores_path, method: :get, class: "search-form") do |f|
+      .main-search__box__input
+        =text_field_tag :prefecture,params[:prefecture],class: "input-box__form1", placeholder: 'エリア[例:銀座、渋谷]'
+        =text_field_tag :city,params[:city], class: "input-box__form2", placeholder: 'ジャンル[例:クッキー、チョコレート]'
+      = submit_tag  '検索', class: 'submit-btn'
+  .search-store__result
+    %p
+      検索結果一覧
+  - @stores.each do |store|
+    .search-store__result__only
+      .search-store__result__only__list1
+        %li.search-store__name
+          %a{href: "#"}
+            =store.name
+        %li.search-store__book-mark
+          =link_to "#" do
+            =icon("far","bookmark")
+      .search-store__result__only__list2
+        .search-store__text
+          =store.text
+        =image_tag("image12.jpg", width: '20%', height: '120px', alt: "")
+        .search-store__star
+          ★★★☆☆
+        .search-store__payment
+          予算300~1000円
+        .search-store__area
+          =store.prefecture
+          =store.city
+        .search-store__review
+          .review-title
+            %a{href: "#"}
+              最高！
+          .review-user
+            by
+            %a{href: "#"}
+              aya
+          .review-text
+            オススメ商品の三色団子を食べました！とっても美味しいです
+      

@@ -1,0 +1,2 @@
+class EreaGenresController < ApplicationController
+end

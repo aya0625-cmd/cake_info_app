@@ -1,0 +1,31 @@
+.main-top
+  =image_tag 'brooke-lark-ZkgWJ4BfgsE-unsplash.jpg', alt: '', height: '100%', width: '100%', class: 'main-top__image'
+  %h4
+    スイーツ探しは
+    %br
+    菓子ログ
+  .main-top__header
+    %p.main-top__header__title
+      菓子ログ
+    %ul
+      %li.main-top__header__list
+        %a{href: "#"}
+          English
+      %li.main-top__header__list
+        %a{href: "#"}
+          予約する
+      %li.main-top__header__list
+        %a{href: "#"}
+          予約履歴
+      %div.main-top__header__nav
+        -if user_signed_in?
+          %li.main-top__header__list.user-nav
+            =link_to "ログアウト", destroy_user_session_path, method: :delete, class: "main-link" 
+          %li.main-top__header__list.user-nav
+            =link_to "アカウント編集", edit_user_path(current_user), class: "main-link" 
+        -else 
+          %li.main-top__header__list
+            =link_to "ログイン", new_user_session_path, class: "main-link" 
+          %li.main-top__header__list
+            =link_to "新規登録", new_user_registration_path, class: "main-link" 
+        
