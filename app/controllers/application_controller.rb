@@ -2,9 +2,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_host
+  before_action :set_parents
 
   def set_host
     Rails.application.routes.default_url_options[:host] = request.host_with_port
+  end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil)
   end
   
   protected

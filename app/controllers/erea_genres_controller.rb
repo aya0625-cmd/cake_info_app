@@ -1,2 +1,3 @@
-class EreaGenresController < ApplicationController
+class AreaGenresController < ApplicationController
+  
 end

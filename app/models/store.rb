@@ -1,10 +1,10 @@
 class Store < ApplicationRecord
-  belongs_to :erea_genre
   has_many :products
+  belongs_to :category
   def self.search(search)
     if search
-      Store.where(['city LIKE(?) OR prefecture LIKE(?)', "%#{search}%","%#{search}%"])
-    else
+      Store.where(' name LIKE ? ', "%#{search}%")
+    else 
       Store.all
     end
   end

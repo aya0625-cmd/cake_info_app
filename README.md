@@ -51,3 +51,5 @@
 ### Association
 - belong_to :user
 - belong_to :product
+
+

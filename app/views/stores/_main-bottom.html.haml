@@ -1,110 +1,110 @@
-.main-bottom
-  .main-search
-    .main-search__box
-      %p
-        エリア×ジャンルから探す
-      =form_tag(search_stores_path, method: :get, class: "search-form") do |f|
-        .main-search__box__input
-          =text_field_tag :prefecture,params[:prefecture],class: "input-box__form1", placeholder: 'エリア[例:銀座、渋谷]'
-      = submit_tag  '検索', class: 'submit-btn'
-      =form_tag( search_products_path, method: :get, class: "search-form") do |f|
-        =text_field_tag :name, params[:name], class: "input-box__form2", placeholder: 'ジャンル[例:クッキー、チョコレート]'
-      = submit_tag  '検索'
-  .main-bottom__box
-    .main-bottom__box__left
-      .main-bottom__box__left__area
-        %h2
-          エリアから探す
-        %ul.area-links1
-          .area-link1
-            =image_tag("image2.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              =link_to "東京","/stores/search?utf8=✓&prefecture=東京&city=&commit=検索",controller: "stores", action: "search"
-          .area-link1
-            =image_tag("image5.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                神奈川
-          .area-link1
-            =image_tag("image3.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                愛知
-        %ul.area-links2
-          .area-link2
-            =image_tag("image1.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                大阪
-          .area-link2
-            =image_tag("image4.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                京都
-          .area-link2
-            =image_tag("image6.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                福岡
-      .main-bottom__box__left__genre
-        %h2
-          ジャンルから探す
-        %ul.area-links1
-          .area-link1
-            =image_tag("image11.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                いちご系ケーキ
-          .area-link1
-            =image_tag("image10.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                チョコケーキ
-          .area-link1
-            =image_tag("image8.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                チーズケーキ
-        %ul.area-links2
-          .area-link2
-            =image_tag("image9.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                焼き菓子 
-          .area-link2
-            =image_tag("image7.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                誕生日ケーキ
-          .area-link2
-            =image_tag("image12.jpg", width: '100%', height: '140px', alt: "",class: "area-link_image")
-            %li
-              %a{href: "#"}
-                ウエディングケーキ
-    .main-bottom__box__right
-      .main-bottom__box__right__my-page
-        .main-bottom__box__right__my-page__user
-          .main-bottom__box__right__my-page__user__image
-            =image_tag("image12.jpg", width: '20%', height: '65px', alt: "")
-          .main-bottom__box__right__my-page__user__nickname
-            =link_to "name", root_path, class: "mypage-link"
-        %ul.main-bottom__box__right__my-page__list
-          %li.my-page__list__history
-            =link_to "予約履歴", root_path
-          %li.my-page__list__bookmark
-            =link_to "ブックマークしたお店", root_path
-          %li.my-page__list__reviews
-            =link_to "口コミ一覧", root_path
-      .main-bottom__box__right__view
-        %p 
-          閲覧履歴
-        %ul.view-history
-          %li.view-history__list
-            =link_to "cake-shop", root_path
-            =image_tag("image7.jpg", width: '20%', height: '65px', alt: "")
-          %li.view-history__list
-            =link_to "cake-shop", root_path
-            =image_tag("image9.jpg", width: '20%', height: '65px', alt: "")
-          %li.view-history__list
-            =link_to "cake-shop", root_path
-            =image_tag("image12.jpg", width: '20%', height: '65px', alt: "")
+.bottom-main
+  .counseling.fade
+    %p.title COUNSELING
+    %hr
+  .news.fade
+    %p.title NEWS 
+    %p.message ”知識”はあなたの味方になる。
+    %hr
+    %p.sabtitle-en NEW 
+    %p.sabtitle-ja  〜 新規記事 〜
+    .news-list.fade
+      %li
+        =link_to "","#", class: "new-news"
+    .news-lists
+      %p.sabtitle-en1 POPULAR
+      %p.sabtitle-ja1 〜 人気記事 〜
+      %ul.news-box.fade
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image1.jpg"),"#", class: "news"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image2.jpg"),"#", class: "news"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image3.jpg"),"#", class: "news"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image1.jpg"),"#", class: "news"
+      %p.sabtitle-en2 RECOMMENDED
+      %p.sabtitle-ja2  〜 あなたにおすすめの記事 〜
+      %ul.news-box.fade
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image1.jpg"),"#", class: "news"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image2.jpg"),"#", class: "news"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image3.jpg"),"#", class: "news"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image1.jpg"),"#", class: "news"
+  .movie.fade
+    %p.title MOVIE
+    %p.message 
+    %hr
+    %p.sabtitle-en RECOMMENDED 
+    %p.sabtitle-ja  〜 こちらの動画、あなたにオススメ 〜
+    .movie-list.fade
+      %li 
+        =link_to "", "#"
+    .movie-lists
+      %p.sabtitle-en1 POPULAR
+      %p.sabtitle-ja1  〜 人気動画 〜
+      %ul.movie-box.fade
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image1.jpg"),"#", class: "movie"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image2.jpg"),"#", class: "movie"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image3.jpg"),"#", class: "movie"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image1.jpg"),"#", class: "movie"
+  .book.fade
+    %p.title BOOK
+    %p.message 
+    %hr
+    %p.sabtitle-en RECOMMENDED
+    %p.sabtitle-ja  〜 こちらの本、あなたにオススメ 〜
+    .book-list.fade
+      %li 
+        =link_to "", "#"
+    .book-lists
+      %p.sabtitle-en1 POPULAR
+      %p.sabtitle-ja1  〜 人気書籍 〜
+      %ul.movie-box.fade
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image1.jpg"),"#", class: "book"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image2.jpg"),"#", class: "book"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image3.jpg"),"#", class: "book"
+        %li
+          .effect-scale
+            .effect-color
+              =link_to image_tag( "image1.jpg"),"#", class: "book"

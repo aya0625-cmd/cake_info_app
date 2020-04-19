@@ -1,0 +1,7 @@
+.search-store__box
+  %p.main-top__header__title
+    菓子ログ
+  =form_tag(search_stores_path, method: :get, class: "search-form") do |f|
+    .main-search__box__input
+      =text_field_tag :keyword,'',class: "input-box__form1", placeholder: '店名検索'
+    = submit_tag  '検索', class: 'submit-btn'

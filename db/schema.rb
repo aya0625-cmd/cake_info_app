@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200305070257) do
+ActiveRecord::Schema.define(version: 20200315114142) do
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "ancestry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ancestry"], name: "index_categories_on_ancestry", using: :btree
+  end
 
   create_table "erea_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                     null: false
@@ -43,6 +51,8 @@ ActiveRecord::Schema.define(version: 20200305070257) do
     t.datetime "updated_at",                   null: false
     t.string   "prefecture"
     t.string   "city"
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_stores_on_category_id", using: :btree
     t.index ["erea_genre_id"], name: "index_stores_on_erea_genre_id", using: :btree
   end
 
@@ -63,5 +73,6 @@ ActiveRecord::Schema.define(version: 20200305070257) do
   end
 
   add_foreign_key "products", "stores"
+  add_foreign_key "stores", "categories"
   add_foreign_key "stores", "erea_genres"
 end
