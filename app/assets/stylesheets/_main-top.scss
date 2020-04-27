@@ -1,0 +1,200 @@
+.wrapper {
+  animation: fadeIn 5s ease 0s 1 normal;
+  -webkit-animation: fadeIn 5s ease 0s 1 normal;
+  .top-mine {
+  margin-bottom: 70px;
+  .slideshow {
+    height: 800px;
+    min-width: 960px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    &-slides {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      img {
+        display: none;
+        object-fit: cover;
+        position: absolute;
+        right: 100px;
+        margin-left: -800px;
+      }
+    }
+    #top-header {
+      padding: 30px;
+      width: 100%;
+      -moz-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      line-height: 50px;
+      .title {
+        font-family: 'Alegreya Sans SC', sans-serif;
+        color: #192f60;
+        font-size: 2rem;
+        position: absolute;
+        left: 6%;
+        top: 7%;
+      }
+      ul {
+        font-family: 'Alegreya Sans SC', sans-serif;
+        display: flex;
+        position: absolute;
+        left: 16%;
+        top: 8%;
+        .menu-list {
+          color: #192f60;
+          margin-left: 40px;
+          text-decoration: none;
+        }
+        .menu-list:hover {
+          text-decoration:underline;
+          color: #719bad;
+        }
+      }
+    }
+    #top-header.scrolled {
+      background: rgba($color: #a4c1d7, $alpha: 0.7);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 100%;
+      .title {
+        color: white;
+        font-size: 1.4rem;
+      }
+      .menu-list {
+        color: white;
+      }
+      .menu-list:hover {
+        text-decoration:underline;
+        color: #3e3e3e;
+      }
+    }
+    .share {
+      p {
+        writing-mode: vertical-rl;
+        font-size: 1rem;
+        position: absolute;
+        right: 20px;
+        top: 400px;
+        color: #192f60;
+      }
+      ul {
+        position: absolute;
+        right: 20px;
+        top: 470px;
+        li {
+          list-style: none;
+        }
+        i {
+          color: #192f60;
+          font-size: 1.3rem;
+          margin-bottom: 15px;
+        }
+        .twitter:hover {
+          color: #55acee;
+        }
+        .facebook:hover {
+          color: #315096;
+        }
+        .instagram:hover {
+          color:  #9941D8;
+        }
+      }
+    }
+  }
+  .hamburger {
+    nav {
+      font-family: 'HCo Gotham', sans-serif;
+      height: 100%;
+      width: 100%;
+      background: rgba($color: #a4c1d7, $alpha: 0.5);
+      position: fixed;
+      top: 0;
+      z-index: 2;
+      transform: translateY(-100%);
+      transition: all 1.0s;
+      text-align: center;
+      hr {
+        border: 0.5px solid white;
+      }
+      .text1 {
+        font-size: 1.2rem;
+        margin-top: 200px;
+        color: white;
+      }
+      .text2 {
+        font-size: 0.8rem;
+        margin-top: 10px;
+        color: white;
+      }
+      ul {
+        width: 100%;
+        position: absolute;
+        top: 40%;
+        li {
+          margin-bottom: 30px;
+          .menu-list {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    nav.global-nav.active {
+      transform: translateY(0%);
+    }
+    .hamburger-btn {
+      display: block;
+      position: fixed;
+      z-index: 3;
+      right: 20px;
+      top: 12px;
+      width: 38px;
+      height: 42px;
+      cursor: pointer;
+      span {
+        display: block;
+        position: absolute;
+        left: 6px;
+        border-bottom: solid 2px #192f60;
+        -webkit-transition: .45s ease-in-out;
+        -moz-transition: .45s ease-in-out;
+        transition: .45s ease-in-out;
+      }
+      span:nth-child(1) {
+        top: 9px;
+        width: 30px;
+      }
+      span:nth-child(2) {
+        top: 18px;
+        width: 25px;
+      }
+      span:nth-child(3) {
+        top: 27px;
+        width: 27px;
+      }
+    }
+    .hamburger-btn.active span:nth-child(1) {
+      top: 18px;
+      left: 6px;
+      width: 30px;
+      border-bottom: solid 3px white;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    .hamburger-btn.active span:nth-child(2), .hamburger-btn.active span:nth-child(3) {
+      top: 18px;
+      width: 30px;
+      border-bottom: solid 3px white;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+   }
+  }
+}

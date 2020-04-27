@@ -1,16 +1,22 @@
 .bottom-main
-  .counseling.fade
+  .counseling.fade#counseling 
     %p.title COUNSELING
     %hr
-  .news.fade
+  .news.fade#news
     %p.title NEWS 
     %p.message ”知識”はあなたの味方になる。
     %hr
     %p.sabtitle-en NEW 
     %p.sabtitle-ja  〜 新規記事 〜
     .news-list.fade
-      %li
-        =link_to "","#", class: "new-news"
+      %li.slick
+        =link_to "#", class: "new-news" do
+          =image_tag "image1.jpg"
+        =link_to "#", class: "new-news" do
+          =image_tag "image2.jpg"
+        =link_to "#", class: "new-news" do
+          =image_tag "image3.jpg"
+      
     .news-lists
       %p.sabtitle-en1 POPULAR
       %p.sabtitle-ja1 〜 人気記事 〜
@@ -50,15 +56,20 @@
           .effect-scale
             .effect-color
               =link_to image_tag( "image1.jpg"),"#", class: "news"
-  .movie.fade
+  .movie.fade#movie
     %p.title MOVIE
     %p.message 
     %hr
     %p.sabtitle-en RECOMMENDED 
     %p.sabtitle-ja  〜 こちらの動画、あなたにオススメ 〜
     .movie-list.fade
-      %li 
-        =link_to "", "#"
+      %li.slick
+        =link_to "#", class: "new-news" do
+          =image_tag "image1.jpg"
+        =link_to "#", class: "new-news" do
+          =image_tag "image2.jpg"
+        =link_to "#", class: "new-news" do
+          =image_tag "image3.jpg"
     .movie-lists
       %p.sabtitle-en1 POPULAR
       %p.sabtitle-ja1  〜 人気動画 〜
@@ -79,7 +90,7 @@
           .effect-scale
             .effect-color
               =link_to image_tag( "image1.jpg"),"#", class: "movie"
-  .book.fade
+  .book.fade#book
     %p.title BOOK
     %p.message 
     %hr

@@ -49,6 +49,7 @@ $(function () {
   });
 });
 
+// スクロール表示
 $(function () {
   $(window).scroll(function () {
     $('.fade').each(function () {
@@ -62,6 +63,28 @@ $(function () {
     });
   });
   $(window).trigger('scroll');
+});
+
+// メニューから指定の場所に自動スクロール
+$(function () {
+  $('.menu-list').click(function () {
+    e.preventDefault();
+    var id = $(this).attr('href');
+    var posi = $(id).offset().top;
+
+    $('html, body').animate({
+      'scrollTop': posi
+    }, 1000)
+  });
+});
+
+
+$(function () {
+  $('.slick').slick({
+    autoplay: true,
+    dots: true,
+    autoplaySpeed: 5000
+  });
 });
 
 

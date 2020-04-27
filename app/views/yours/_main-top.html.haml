@@ -1,0 +1,57 @@
+.top-mine
+  .hamburger      
+    .hamburger-btn
+      %span
+      %span
+      %span
+    %nav.global-nav
+      %p.text1 あなたのことを教えてください。
+      %p.text2 あなたのデータに適した情報だけを提供します（後から変更も可能です）
+      %hr
+      %ul.menu 
+        %li 
+          =link_to "基本データ","#", class: "menu-list"
+        %li 
+          =link_to "性格","#", class: "menu-list"
+        %li 
+          =link_to "目標","#", class: "menu-list"
+        %li 
+          =link_to "好きなモノ/コト","#", class: "menu-list"
+  .slideshow
+    .slideshow-slides
+      = image_tag "image1.jpg", width:"100%", height:"800"
+      = image_tag "image2.jpg", width:"100%", height:"800"
+      = image_tag "image3.jpg", width:"100%", height:"800"
+    %header#top-header 
+      %p.title HEROINE
+      %ul
+        -if user_signed_in? && current_user.id 
+          %li
+            =link_to "LOGOUT", destroy_user_session_path, class: "menu-list"
+          %li 
+            =link_to "SETUP", "#", class: "menu-list"
+        -else 
+          %li
+            =link_to "SIGNUP", new_user_registration_path, class: "menu-list"
+          %li 
+            =link_to "SIGNIN", new_user_session_path, class: "menu-list"
+        %li 
+          =link_to "COUNSELING","#counseling", class: "menu-list"
+        %li 
+          =link_to "NEWS","#news", class: "menu-list"
+        %li 
+          =link_to "MOVIE","#movie", class: "menu-list"
+        %li 
+          =link_to "BOOK","#book", class: "menu-list"
+    .share
+      %p Share
+      %ul
+        %li 
+          =link_to "https://twitter.com" do |f|
+            =icon("fab","twitter", class: "twitter")
+        %li 
+          =link_to "https://www.facebook.com/" do |f|
+            =icon("fab","facebook", class: "facebook")
+        %li 
+          =link_to "https://www.instagram.com" do |f|
+            =icon("fab","instagram", class: "instagram")

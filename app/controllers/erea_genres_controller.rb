@@ -1,3 +1,0 @@
-class AreaGenresController < ApplicationController
-  
-end

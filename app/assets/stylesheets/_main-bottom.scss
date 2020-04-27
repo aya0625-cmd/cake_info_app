@@ -34,153 +34,9 @@ html,body {
 }
 
 .wrapper {
-  height: 100%;
-  width: 100%;
   animation: fadeIn 5s ease 0s 1 normal;
   -webkit-animation: fadeIn 5s ease 0s 1 normal;
-  .top-mine {
-    margin-bottom: 70px;
-    .slideshow {
-      height: 800px;
-      min-width: 960px;
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
-      &-slides {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        img {
-          display: none;
-          object-fit: cover;
-          position: absolute;
-          right: 100px;
-          margin-left: -800px;
-        }
-      }
-      #top-header {
-        padding: 40px;
-        width: 100%;
-        -moz-transition: all 0.3s;
-        -o-transition: all 0.3s;
-        -webkit-transition: all 0.3s;
-        transition: all 0.3s;
-        line-height: 60px;
-        .title {
-          font-family: 'Alegreya Sans SC', sans-serif;
-          color: #262626;
-          font-size: 2rem;
-          position: absolute;
-          left: 6%;
-          top: 7%;
-        }
-        ul {
-          font-family: 'Alegreya Sans SC', sans-serif;
-          display: flex;
-          position: absolute;
-          left: 16%;
-          top: 8%;
-          .menu-list {
-            color: #262626;
-            margin-left: 40px;
-            text-decoration: none;
-          }
-          .menu-list:hover {
-            text-decoration:underline;
-            color: #a8a8a8;
-          }
-        }
-      }
-      #top-header.scrolled {
-        background: rgba($color: #000000, $alpha: 0.5);
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        width: 100%;
-        .menu-list, .title {
-          color: white;
-        }
-      }
-    }
-    .hamburger {
-      nav {
-        height: 100%;
-        width: 100%;
-        background: rgba($color: #000000, $alpha: 0.5);
-        position: fixed;
-        top: 0;
-        z-index: 2;
-        transform: translateY(-100%);
-        transition: all 1.0s;
-        text-align: center;
-        ul {
-          width: 100%;
-          position: absolute;
-          top: 30%;
-          li {
-            
-            margin-bottom: 30px;
-            .menu-list {
-              color: white;
-              text-decoration: none;
-            }
-          }
-        }
-      }
-      nav.global-nav.active {
-        transform: translateY(0%);
-      }
-      .hamburger-btn {
-        display: block;
-        position: fixed;
-        z-index: 3;
-        right: 20px;
-        top: 12px;
-        width: 38px;
-        height: 42px;
-        cursor: pointer;
-        span {
-          display: block;
-          position: absolute;
-          left: 6px;
-          border-bottom: solid 3px #000;
-          -webkit-transition: .45s ease-in-out;
-          -moz-transition: .45s ease-in-out;
-          transition: .45s ease-in-out;
-        }
-        span:nth-child(1) {
-          top: 9px;
-          width: 30px;
-        }
-        span:nth-child(2) {
-          top: 18px;
-          width: 25px;
-        }
-        span:nth-child(3) {
-          top: 27px;
-          width: 27px;
-        }
-      }
-      .hamburger-btn.active span:nth-child(1) {
-        top: 18px;
-        left: 6px;
-        width: 30px;
-        border-bottom: solid 3px white;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-      }
-      .hamburger-btn.active span:nth-child(2), .hamburger-btn.active span:nth-child(3) {
-        top: 18px;
-        width: 30px;
-        border-bottom: solid 3px white;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        transform: rotate(45deg);
-      }
-    }
-  }
+  
   .bottom-main {
     @include size(100%, 100%, 0);
     .fade {
@@ -213,7 +69,6 @@ html,body {
     }
     .counseling {
       @include size(700px, 100%, 0);
-     
     }
     .news {
       position: relative;
@@ -234,25 +89,30 @@ html,body {
         top: 50px;
       }
       &-list {
-        @include size(300px, 100%, 0);  
+        @include size(300px, 80%, 0);  
         margin-bottom: 70px;
-        .title {
-          font-family: 'Alegreya Sans SC', sans-serif;
-          color: #404040;
-          position: absolute;
-          left: 70px;
-          top: 50px;
-        }
-        li {
-          @include size(100%, 95%, 0);
+        margin: auto;
+        border-radius: 10px;
+        .slick {
+          @include size(300px, 80%, 0);  
+          border-radius: 10px;
           border: 1px solid #a1a1a1;
           margin: auto;
           margin-top: 50px;
-          border-radius: 10px;
-          list-style: none;
+        
+          .new-news {
+            @include size(300px, 80%, 0); 
+            border-radius: 10px;
+            list-style: none;
+            img {
+              @include size(100%, 100%, 0);
+              object-fit: cover;
+              border-radius: 10px;
+            }
+          }
         }
       } 
-      .news-lists {
+      &-lists {
         height: 100%;
         p.sabtitle-en1 {
           font-family: 'Alegreya Sans SC', sans-serif;
@@ -293,6 +153,7 @@ html,body {
           justify-content: space-between;
           max-width: 1200px;
           margin: auto;
+          margin-top: 60px;
           li {
             @include size(400px, 280px, 0);
             border-radius: 10px;
@@ -349,19 +210,30 @@ html,body {
         left: 220px;
         top: 50px;
       }
-      .movie-list {
-        @include size(300px, 100%, 0);  
+      &-list {
+        @include size(300px, 80%, 0);  
         margin-bottom: 70px;
-        li {
-          @include size(100%, 95%, 0);
+        margin: auto;
+        border-radius: 10px;
+        .slick {
+          @include size(300px, 80%, 0);  
+          border-radius: 10px;
           border: 1px solid #a1a1a1;
           margin: auto;
           margin-top: 50px;
-          border-radius: 10px;
-          list-style: none;
+          .new-news {
+            @include size(300px, 80%, 0); 
+            border-radius: 10px;
+            list-style: none;
+            img {
+              @include size(100%, 100%, 0);
+              object-fit: cover;
+            }
+          }
         }
-      }
+      } 
       .movie-lists {
+        margin-top: 100px;
         p.sabtitle-en1 {
           font-family: 'Alegreya Sans SC', sans-serif;
           color: #404040;
@@ -503,6 +375,54 @@ html,body {
            }
          } 
         }
+      }
+    }
+  }
+  .footer {
+    @include size(300px, 100%, 0);
+    color: #404040;
+    position: relative;
+    hr {
+      color: #a1a1a1;
+    }
+    &-list {
+      font-family: 'HCo Gotham', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      max-width: 700px;
+      margin: auto;
+      margin-top: 30px;
+      .guide, .user, .company {
+        p {
+          font-size: 0.8rem;
+          margin-bottom: 20px;
+          font-weight: bold;
+        }
+        li {
+          list-style: none;
+          text-align: center;
+          a {
+            text-decoration: none;
+            color: #454545;
+            font-size: 0.7rem;
+          }
+        }
+        a:hover {
+          color: #a1a1a1;
+        }
+      }
+    }
+    &-com {
+      position: absolute;
+      bottom: 10px;
+      left: 48%;
+      .title {
+        font-size: 1.3rem;
+      }
+      .text {
+        font-size: 0.6rem;
+        font-family: 'HCo Gotham', sans-serif;
+        text-align: center;
       }
     }
   }

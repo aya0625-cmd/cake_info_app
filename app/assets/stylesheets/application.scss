@@ -1,5 +1,12 @@
 @import "reset";
-@import "modules/stores";
+
+@import "main-bottom";
+@import "main-top";
+@import "modules/user";
+@import "loading";
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "modules/user";
+@import "slick-theme"; 
+@import "slick";
+
