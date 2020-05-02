@@ -1,121 +1,109 @@
 .bottom-main
-  .counseling.fade#counseling 
-    %p.title COUNSELING
-    %hr
-  .news.fade#news
-    %p.title NEWS 
-    %p.message ”知識”はあなたの味方になる。
-    %hr
-    %p.sabtitle-en NEW 
-    %p.sabtitle-ja  〜 新規記事 〜
-    .news-list.fade
+  .news1
+    .news1-list
       %li.slick
         =link_to "#", class: "new-news" do
-          =image_tag "image1.jpg"
+          =image_tag "image1.jpg" 
+          .news-message
+            %p 働き女子必見ニュース！osusume
         =link_to "#", class: "new-news" do
           =image_tag "image2.jpg"
+          .news-message
+            %p 働き女子必見ニュース！osusume
         =link_to "#", class: "new-news" do
           =image_tag "image3.jpg"
-      
-    .news-lists
-      %p.sabtitle-en1 POPULAR
-      %p.sabtitle-ja1 〜 人気記事 〜
-      %ul.news-box.fade
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image1.jpg"),"#", class: "news"
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image2.jpg"),"#", class: "news"
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image3.jpg"),"#", class: "news"
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image1.jpg"),"#", class: "news"
-      %p.sabtitle-en2 RECOMMENDED
-      %p.sabtitle-ja2  〜 あなたにおすすめの記事 〜
-      %ul.news-box.fade
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image1.jpg"),"#", class: "news"
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image2.jpg"),"#", class: "news"
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image3.jpg"),"#", class: "news"
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image1.jpg"),"#", class: "news"
-  .movie.fade#movie
-    %p.title MOVIE
-    %p.message 
-    %hr
-    %p.sabtitle-en RECOMMENDED 
-    %p.sabtitle-ja  〜 こちらの動画、あなたにオススメ 〜
-    .movie-list.fade
-      %li.slick
+          .news-message
+            %p 働き女子必見ニュース！osusume
         =link_to "#", class: "new-news" do
-          =image_tag "image1.jpg"
+          =image_tag "image4.jpg"
+          .news-message
+            %p 働き女子必見ニュース！osusume
         =link_to "#", class: "new-news" do
-          =image_tag "image2.jpg"
-        =link_to "#", class: "new-news" do
-          =image_tag "image3.jpg"
-    .movie-lists
-      %p.sabtitle-en1 POPULAR
-      %p.sabtitle-ja1  〜 人気動画 〜
-      %ul.movie-box.fade
+          =image_tag "image5.jpg"
+          .news-message
+            %p 働き女子必見ニュース！osusume
+  .news2
+    .news2-lists.fade
+      %p.news-title
+        New Articles
+      %hr
+      %ul.news-box
         %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image1.jpg"),"#", class: "movie"
+          =link_to "#" do
+            .effect-scale
+              .effect-color
+                =image_tag "image1.jpg",class: "news"
+                .news-message
+                  .news-message_text プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃうメイク術を紹介します！！
         %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image2.jpg"),"#", class: "movie"
+          =link_to "#" do
+            .effect-scale
+              .effect-color
+                =image_tag "image1.jpg",class: "news"
+                .news-message
+                  .news-message_text プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃうメイク術を紹介します！！
         %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image3.jpg"),"#", class: "movie"
+          =link_to "#" do
+            .effect-scale
+              .effect-color
+                =image_tag "image1.jpg",class: "news"
+                .news-message
+                  .news-message_text プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃうメイク術を紹介します！！
+      %ul.news-box
         %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image1.jpg"),"#", class: "movie"
-  .book.fade#book
-    %p.title BOOK
-    %p.message 
-    %hr
-    %p.sabtitle-en RECOMMENDED
-    %p.sabtitle-ja  〜 こちらの本、あなたにオススメ 〜
-    .book-list.fade
-      %li 
-        =link_to "", "#"
-    .book-lists
-      %p.sabtitle-en1 POPULAR
-      %p.sabtitle-ja1  〜 人気書籍 〜
-      %ul.movie-box.fade
+          =link_to "#" do
+            .effect-scale
+              .effect-color
+                =image_tag "image1.jpg",class: "news"
+                .news-message
+                  .news-message_text プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃうメイク術を紹介します！！
         %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image1.jpg"),"#", class: "book"
+          =link_to "#" do
+            .effect-scale
+              .effect-color
+                =image_tag "image1.jpg",class: "news"
+                .news-message
+                  .news-message_text プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃうメイク術を紹介します！！
         %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image2.jpg"),"#", class: "book"
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image3.jpg"),"#", class: "book"
-        %li
-          .effect-scale
-            .effect-color
-              =link_to image_tag( "image1.jpg"),"#", class: "book"
+          =link_to "#" do
+            .effect-scale
+              .effect-color
+                =image_tag "image1.jpg",class: "news"
+                .news-message
+                  .news-message_text プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃうメイク術を紹介します！！
+      %li.more
+        =link_to "#" do
+          More...
+    .ranking-lists.fade
+      %p Daily Ranking
+      %hr
+      %li
+        %span.rank 1
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image1.jpg"
+          %p  プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃう   
+      %li
+        %span.rank 2
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image1.jpg"
+          %p  プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃう  
+      %li
+        %span.rank 3
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image1.jpg"
+          %p  プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃう  
+      %li
+        %span.rank 4
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image1.jpg"
+          %p  プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃう  
+      %li
+        %span.rank 5
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image1.jpg"
+          %p  プロのメイクアーティストがかんたんで可愛い!時短10分で出来ちゃう          

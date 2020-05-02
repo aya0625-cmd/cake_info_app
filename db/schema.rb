@@ -10,45 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200426140112) do
+ActiveRecord::Schema.define(version: 20200428033937) do
 
-  create_table "books", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "id"
-    t.text    "text",   limit: 65535
-    t.string  "author"
-    t.string  "title"
+  create_table "books", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text   "text",   limit: 65535
+    t.string "author"
+    t.string "title"
   end
 
-  create_table "comments", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "id"
+  create_table "comments", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text    "text",          limit: 65535
     t.integer "counseling_id"
     t.index ["counseling_id"], name: "index_comments_on_counseling_id", using: :btree
   end
 
-  create_table "counselings", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "id"
-    t.text    "text", limit: 4294967295
-    t.string  "type"
+  create_table "counselings", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text    "text", limit: 4294967295, null: false
+    t.integer "kind",                    null: false
   end
 
-  create_table "goods", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "id"
+  create_table "goods", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "good_num"
   end
 
-  create_table "movies", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "id"
-    t.string  "title"
-    t.string  "author"
-    t.text    "text",   limit: 65535
+  create_table "movies", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.string "author"
+    t.text   "text",   limit: 65535
   end
 
-  create_table "news", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "id"
-    t.string  "title"
-    t.text    "text",  limit: 4294967295
-    t.text    "image", limit: 65535
+  create_table "news", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text   "text",  limit: 4294967295
+    t.text   "image", limit: 65535
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

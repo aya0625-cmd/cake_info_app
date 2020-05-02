@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root "yours#index"
   resources :users, only: [:index,:edit, :update]
   resources :yours, only: [:index] 
+  resources :counselings, only: [:index, :new, :create]
 
 end

@@ -4,6 +4,14 @@ html,body {
   padding: 0;
 }
 
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -48,338 +56,198 @@ html,body {
       opacity : 1;
       transform : translate(0, 0);
     }
-    .title {
-      font-family: 'Alegreya Sans SC', sans-serif;
-      color: #404040;
-      font-size: 1.6rem;
-      margin-left: 70px;
-      float: left;
-    }
-    .message {
-      float: right;
-      position: relative;
-      margin-right: 20px;
-      font-family: 'HCo Gotham', sans-serif;
-      font-size: 0.8rem;
-      color: #404040;
-    }
-    hr {
-      width: 95%;
-      margin-right: 0;
-    }
-    .counseling {
-      @include size(700px, 100%, 0);
-    }
-    .news {
-      position: relative;
-      p.sabtitle-en {
-        font-family: 'Alegreya Sans SC', sans-serif;
-        color: #404040;
-        font-size: 1.2rem;
-        position: absolute;
-        left: 70px;
-        top: 50px;
-      }
-      p.sabtitle-ja {
-        font-family: 'HCo Gotham', sans-serif;
-        color: #404040;
-        font-size: 0.8rem;
-        position: absolute;
-        left: 120px;
-        top: 50px;
-      }
+    .news1 {
       &-list {
-        @include size(300px, 80%, 0);  
         margin-bottom: 70px;
         margin: auto;
-        border-radius: 10px;
-        .slick {
-          @include size(300px, 80%, 0);  
-          border-radius: 10px;
-          border: 1px solid #a1a1a1;
+        li {
           margin: auto;
           margin-top: 50px;
-        
           .new-news {
-            @include size(300px, 80%, 0); 
-            border-radius: 10px;
             list-style: none;
+            position: relative;
             img {
-              @include size(100%, 100%, 0);
+              @include size(450px, 98%, 0);
               object-fit: cover;
-              border-radius: 10px;
+              opacity: 1;
+            }
+            img:hover {
+              opacity: .7;
+              background: linear-gradient(to top, #e2e4e7 0%, #f3f0f0 0%, #e7eee6 100%);
+              -webkit-transition: all 0.5s ease; /* ふわっと表示 */
+              -moz-transition: all 0.5s ease;
+              -o-transition: all 0.5s ease;
+              transition: all  0.5s ease;
+            }
+            .news-message {
+             @include size(80px, 98%, 15px);
+             background-color: rgba($color: #000000, $alpha: 0.5);
+             position: absolute;
+             bottom: 0;
+             color: white;
             }
           }
         }
       } 
+    }
+    .news2 {
+     display: flex;
+     justify-content: center;
+     margin-top: 150px;
       &-lists {
-        height: 100%;
-        p.sabtitle-en1 {
-          font-family: 'Alegreya Sans SC', sans-serif;
-          color: #404040;
-          font-size: 1.2rem;
-          position: absolute;
-          left: 130px;
-          top: 415px;
-        }
-        p.sabtitle-ja1 {
-          font-family: 'HCo Gotham', sans-serif;
-          color: #404040;
-          font-size: 0.8rem;
-          position: absolute;
-          left: 220px;
-          top: 415px;
-        }
-        p.sabtitle-en2 {
-          font-family: 'Alegreya Sans SC', sans-serif;
-          color: #404040;
-          font-size: 1.2rem;
-          position: absolute;
-          left: 130px;
-          bottom: 520px;
-        }
-        p.sabtitle-ja2 {
-          font-family: 'HCo Gotham', sans-serif;
-          color: #404040;
-          font-size: 0.8rem;
-          position: absolute;
-          left: 270px;
-          bottom: 520px;
+        width: 50%;
+        margin-bottom: 40px;
+        .news-title {
+          text-align: center;
+          margin-bottom: 10px;
+          font-size: 1.5rem;
+          color: #5e5e5e;
+         }
+         hr {
+          width: 6%;
+          text-align: center;
         }
         .news-box {
-          height: 500px;
+          height: 300px;
           width: 100%;
           display: flex;
           justify-content: space-between;
-          max-width: 1200px;
-          margin: auto;
-          margin-top: 60px;
+          margin-top: 20px;
           li {
-            @include size(400px, 280px, 0);
-            border-radius: 10px;
-            border: 1px solid #a1a1a1;
+            @include size(300px, 220px, 0);
+            position: relative;
+            opacity: 1;
+            a {
+              text-decoration: none;
+            }
+            .effect-scale {
+              overflow: hidden;
+              .effect-color {
+                background: linear-gradient(to top, #91c2f0 0%, #f3f0f0 0%, #e7eee6 100%);
+                img {
+                  @include size(200px, 220px, 0);
+                  object-fit: cover;
+                  transform: scale(1);
+                  -webkit-transition: .3s ease-in-out;
+                  transition: .3s ease-in-out;
+                }
+                img:hover {
+                  transform: scale(1.1);
+                }
+                .news-message {
+                  @include size(30%, 100%, 0);
+                  padding: 0 5px;
+                  position: absolute;
+                  right: 0;
+                  &_text {
+                    font-size: 0.8rem;
+                    color: #5e5e5e;
+                  }
+                }
+              }
+            } 
           }
-          .effect-scale {
-            overflow: hidden;
-            border-radius: 10px 10px 0 0 / 10px 10px 0 0;
-            .effect-color {
-            background: linear-gradient(to top, #91c2f0 0%, #fcfafa 0%, #c9ffbf 100%);
-            img {
-              @include size(100%, 100%, 0);
-              object-fit: cover;
-              border-radius: 10px 10px 0 0 / 10px 10px 0 0;
-              opacity: 1;
-              transform: scale(1);
-              -webkit-transition: .3s ease-in-out;
-              transition: .3s ease-in-out;
-            }
-            img:hover {
-              opacity: .9;
-              transform: scale(1.1);
-            }
-           }
-         } 
-        }
-      }
-    }
-    .movie {
-      title {
-        font-family: 'Alegreya Sans SC', sans-serif;
-        color: #404040;
-        font-size: 1.6rem;
-        margin-left: 70px;
-        float: left;
-      }
-      hr {
-        width: 95%;
-        margin-right: 0;
-      }
-      p.sabtitle-en {
-        font-family: 'Alegreya Sans SC', sans-serif;
-        color: #404040;
-        font-size: 1.2rem;
-        position: absolute;
-        left: 70px;
-        top: 50px;
-      }
-      p.sabtitle-ja {
-        font-family: 'HCo Gotham', sans-serif;
-        color: #404040;
-        font-size: 0.8rem;
-        position: absolute;
-        left: 220px;
-        top: 50px;
-      }
-      &-list {
-        @include size(300px, 80%, 0);  
-        margin-bottom: 70px;
-        margin: auto;
-        border-radius: 10px;
-        .slick {
-          @include size(300px, 80%, 0);  
-          border-radius: 10px;
-          border: 1px solid #a1a1a1;
-          margin: auto;
-          margin-top: 50px;
-          .new-news {
-            @include size(300px, 80%, 0); 
-            border-radius: 10px;
-            list-style: none;
-            img {
-              @include size(100%, 100%, 0);
-              object-fit: cover;
-            }
+          li:hover {
+            opacity: .7;
+            -webkit-transition: all 0.5s ease; /* ふわっと表示 */
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all  0.5s ease;
           }
         }
-      } 
-      .movie-lists {
-        margin-top: 100px;
-        p.sabtitle-en1 {
-          font-family: 'Alegreya Sans SC', sans-serif;
-          color: #404040;
-          font-size: 1.2rem;
-          position: absolute;
-          left: 130px;
-          top: 420px;
-        }
-        p.sabtitle-ja1 {
-          font-family: 'HCo Gotham', sans-serif;
-          color: #404040;
-          font-size: 0.8rem;
-          position: absolute;
-          left: 230px;
-          top: 420px;
-        }
-        .movie-box {
-          height: 500px;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          max-width: 1200px;
-          margin: auto;
-          li {
-            @include size(400px, 280px, 0);
-            border-radius: 10px;
-            border: 1px solid #a1a1a1;
-          }
-          .effect-scale {
-            overflow: hidden;
-            border-radius: 10px 10px 0 0 / 10px 10px 0 0;
-            .effect-color {
-            background: linear-gradient(to top, #91c2f0 0%, #fcfafa 0%, #c9ffbf 100%);
-            img {
-              @include size(100%, 100%, 0);
-              object-fit: cover;
-              border-radius: 10px 10px 0 0 / 10px 10px 0 0;
-              opacity: 1;
-              transform: scale(1);
-              -webkit-transition: .3s ease-in-out;
-              transition: .3s ease-in-out;
-            }
-            img:hover {
-              opacity: .9;
-              transform: scale(1.1);
-            }
-           }
-         } 
-        }
-      }
-    }
-    .book {
-      title {
-        font-family: 'Alegreya Sans SC', sans-serif;
-        color: #404040;
-        font-size: 1.6rem;
-        margin-left: 70px;
-        float: left;
-      }
-      hr {
-        width: 95%;
-        margin-right: 0;
-      }
-      p.sabtitle-en {
-        font-family: 'Alegreya Sans SC', sans-serif;
-        color: #404040;
-        font-size: 1.2rem;
-        position: absolute;
-        left: 70px;
-        top: 50px;
-      }
-      p.sabtitle-ja {
-        font-family: 'HCo Gotham', sans-serif;
-        color: #404040;
-        font-size: 0.8rem;
-        position: absolute;
-        left: 210px;
-        top: 50px;
-      }
-      .book-list {
-        @include size(300px, 100%, 0);  
-        margin-bottom: 70px;
-        li {
-          @include size(100%, 95%, 0);
-          border: 1px solid #a1a1a1;
-          margin: auto;
-          margin-top: 50px;
-          border-radius: 10px;
+        .more {
+          @include size(40px, 300px, 10px 0);
+          background-color: white;
           list-style: none;
+          text-align: center;
+          margin: auto;
+          border: 0.8px solid #5e5e5e;
+          a {
+            text-decoration: none;
+            color: #5e5e5e;
+            letter-spacing: .2em;
+          }
+        }
+        .more:hover {
+          background-color: #e3acae;
+          border: none;
+          -webkit-transition: all 0.5s ease; /* ふわっと表示 */
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all  0.5s ease;
+          a {
+            color: #fff;
+          }
         }
       }
-      .book-lists {
-        p.sabtitle-en1 {
-          font-family: 'Alegreya Sans SC', sans-serif;
-          color: #404040;
-          font-size: 1.2rem;
-          position: absolute;
-          left: 130px;
-          top: 420px;
+      .ranking-lists {
+        margin-left: 30px;
+        width: 25%;
+        float: right;
+        p {
+          color: #5e5e5e;
+          font-size: 1.5rem;
+          text-align: center;
+          margin-top: 2px;
         }
-        p.sabtitle-ja1 {
-          font-family: 'HCo Gotham', sans-serif;
-          color: #404040;
-          font-size: 0.8rem;
-          position: absolute;
-          left: 230px;
-          top: 420px;
+        hr {
+          width: 15%;
+          text-align: center;
         }
-        .movie-box {
-          height: 500px;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          max-width: 1200px;
-          margin: auto;
-          li {
-            @include size(400px, 280px, 0);
-            border-radius: 10px;
-            border: 1px solid #a1a1a1;
+        li {
+          @include size(130px, 100%, 0);
+          list-style: none;
+          margin-bottom: 10px;
+          border-bottom: 1px solid #a0a0a0;
+          position: relative;
+          opacity: 1;
+          span {
+            @include size(30px, 30px, 0);
+            background-color: #e3acae;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            position: absolute;
+            top: 10px;
+            z-index: 1;
+
           }
-          .effect-scale {
-            overflow: hidden;
-            border-radius: 10px 10px 0 0 / 10px 10px 0 0;
-            .effect-color {
-            background: linear-gradient(to top, #91c2f0 0%, #fcfafa 0%, #c9ffbf 100%);
-            img {
-              @include size(100%, 100%, 0);
-              object-fit: cover;
-              border-radius: 10px 10px 0 0 / 10px 10px 0 0;
-              opacity: 1;
-              transform: scale(1);
-              -webkit-transition: .3s ease-in-out;
-              transition: .3s ease-in-out;
+          .ranking-lists_1 {
+            display: block;
+            text-decoration: none;
+            .news_image {
+              @include size(110px, 35%, 0);
+              margin-top: 10px;
+              background-color: #454545;
+              float: left;
+              img {
+                @include size(110px, 100%, 0);
+                object-fit: cover;
+              }
             }
-            img:hover {
-              opacity: .9;
-              transform: scale(1.1);
+            p {
+              @include size(50px, 60%, 0);
+              padding-left: 5px;
+              margin-top: 50px;
+              font-size: 0.8rem;
+              float: right;
             }
-           }
-         } 
+          }
+        }
+        li:hover {
+          opacity: .7;
+          -webkit-transition: all 0.5s ease; /* ふわっと表示 */
+          -moz-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all  0.5s ease;
         }
       }
     }
   }
   .footer {
+    clear: both;
     @include size(300px, 100%, 0);
+    margin-top: 80px;
     color: #404040;
     position: relative;
     hr {

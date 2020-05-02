@@ -1,0 +1,3 @@
+class Your < ApplicationRecord
+
+end

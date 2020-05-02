@@ -1,0 +1,13 @@
+.new-counselings
+  %h1 あなたはひとりじゃない、気軽に相談しましょ。
+  .new-counselings_form 
+    =form_for @counseling do |f| 
+      .counseling-category
+        %p 相談したいジャンルを選んでね。
+        =f.select :kind, Category.all.map { |pre| [pre.name, pre.id] },{include_blank: "相談したいジャンル"}
+      .counseling-text 
+        %p どんなことで悩んでいるの？
+        = f.text_area :text, class: "text_field"
+      .submit-btn
+        =f.submit "相談する", class: "button"
+        =link_to "戻る", root_path

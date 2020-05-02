@@ -5,26 +5,7 @@
       %span
       %span
     %nav.global-nav
-      %p.text1 あなたのことを教えてください。
-      %p.text2 あなたのデータに適した情報だけを提供します（後から変更も可能です）
-      %hr
       %ul.menu 
-        %li 
-          =link_to "基本データ","#", class: "menu-list"
-        %li 
-          =link_to "性格","#", class: "menu-list"
-        %li 
-          =link_to "目標","#", class: "menu-list"
-        %li 
-          =link_to "好きなモノ/コト","#", class: "menu-list"
-  .slideshow
-    .slideshow-slides
-      = image_tag "image1.jpg", width:"100%", height:"800"
-      = image_tag "image2.jpg", width:"100%", height:"800"
-      = image_tag "image3.jpg", width:"100%", height:"800"
-    %header#top-header 
-      %p.title HEROINE
-      %ul
         -if user_signed_in? && current_user.id 
           %li
             =link_to "LOGOUT", destroy_user_session_path, class: "menu-list"
@@ -35,14 +16,48 @@
             =link_to "SIGNUP", new_user_registration_path, class: "menu-list"
           %li 
             =link_to "SIGNIN", new_user_session_path, class: "menu-list"
+  .search_form
+    =form_for "#" do |f|
+      =f.text_field :id, placeholder: "Search", class: "text_field" 
+      =button_tag "#",type: 'submit', class: "button" do
+        .icon
+          =icon("fas", "search")
+  .category-list
+    %p.title HEROINE
+    %header#top-header 
+      %ul
+        %li
+          %br コミュニティ
+          =link_to "#", class: "menu" do
+            Community
         %li 
-          =link_to "COUNSELING","#counseling", class: "menu-list"
+          %br キャリア
+          =link_to "#", class: "menu" do
+            Career 
+        %li
+          %br ジェンダー
+          =link_to "#", class: "menu" do
+            Gender 
         %li 
-          =link_to "NEWS","#news", class: "menu-list"
+          %br 管理職
+          =link_to "#", class:"menu" do
+            Leader  
         %li 
-          =link_to "MOVIE","#movie", class: "menu-list"
+          %br ワークスタイル
+          =link_to "#", class: "menu" do
+            WorkStyle 
         %li 
-          =link_to "BOOK","#book", class: "menu-list"
+          %br スキル
+          =link_to "#", class: "menu" do
+            Skill 
+        %li 
+          %br 子育て
+          =link_to "#", class: "menu" do
+            Child
+        %li 
+          %br 結婚
+          =link_to  "#", class: "menu" do
+            Marriage
     .share
       %p Share
       %ul

@@ -1,0 +1,76 @@
+@keyframes marquee {
+  0%{
+     transform: translate(-40%, 0%);
+   }
+  100%{
+     transform: translate(-60%, 0%);
+  }
+}
+
+.main-counselings {
+  header {
+    .message {
+      width: 100%;
+      font-size: 1.2rem;
+      text-align: center;
+      color: #404040;
+      margin: 50px 0;
+     
+    }
+    ul {
+      display: flex;
+      justify-content: space-around;
+      li {
+        text-align: center;
+        height: 50px;
+        width: 120px;
+        position: relative;
+        font-size: 0.6rem;
+        color: white;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all  0.3s ease;
+        .menu {
+          color: #404040;
+          text-decoration: none;
+          font-size: 1.2rem;
+          text-decoration: none;
+          -webkit-transition: all 0.3s ease; /* ふわっと表示 */
+          -moz-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          transition: all  0.3s ease;
+          position: relative; /* アンダーラインのanimate */
+          display: inline-block;
+        }
+        .menu::after{
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          content: '';
+          width: 100%;
+          height: 2px;
+          background: #d9aacd;
+          transform: scale(0, 1);
+          transform-origin: center top;
+          transition: transform .3s;
+        }
+        .menu:hover::after{
+          transform: scale(1, 1);
+        }
+        .menu:hover {
+          color: #d9aacd;
+        }
+      }
+      li:hover {
+        color: #d9aacd;
+      }
+    }
+  }
+  .slide-counseling {
+    
+  }
+  
+}
+
+ 

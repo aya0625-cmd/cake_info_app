@@ -1,22 +1,22 @@
 // 画像自動再生
-$(function () {
-  $(".slideshow").each(function () {
-    var slides = $(this).find('img'),
-      slideCount = slides.length,
-      currentIndex = 0;
+//$(function () {
+  //$(".slideshow").each(function () {
+   // var slides = $(this).find('img'),
+    //  slideCount = slides.length,
+    //  currentIndex = 0;
     
-    slides.eq(currentIndex).fadeIn();
+   // slides.eq(currentIndex).fadeIn();
 
-    setInterval(showNextSlide, 7500);
+  //  setInterval(showNextSlide, 7500);
 
-    function showNextSlide() {
-      var nextIndex = (currentIndex + 1) % slideCount;
-      slides.eq(currentIndex).fadeOut(2000);
-      slides.eq(nextIndex).fadeIn(4000);
-      currentIndex = nextIndex;
-    }
-  });
-});
+   // function showNextSlide() {
+     // var nextIndex = (currentIndex + 1) % slideCount;
+    //  slides.eq(currentIndex).fadeOut(2000);
+     // slides.eq(nextIndex).fadeIn(4000);
+     // currentIndex = nextIndex;
+   // }
+ // });
+//});
 
 
 // ハンバーガーメニュー
@@ -83,7 +83,10 @@ $(function () {
   $('.slick').slick({
     autoplay: true,
     dots: true,
-    autoplaySpeed: 5000
+    autoplaySpeed: 5000,
+    centerMode: true,
+    centerPadding: '100px',
+    slidesToShow: 3
   });
 });
 

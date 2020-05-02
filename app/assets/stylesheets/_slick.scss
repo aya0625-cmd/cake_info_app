@@ -20,7 +20,6 @@
     display: block;
     margin: 0;
     padding: 0;
-    border-radius: 10px;
     &:focus {
         outline: none;
     }
@@ -32,12 +31,20 @@
 }
 .slick-slider .slick-track,
 .slick-slider .slick-list {
+    background: #fff;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
+
+.slick-initialized .slick-slide{
+    opacity: 0.5; /* 両サイドの画像を透過 */
+  }
+.slick-initialized .slick-slide.slick-active{
+    opacity: 1; /* センター画像を非透過 */
+  }
 
 .slick-track {
     position: relative;

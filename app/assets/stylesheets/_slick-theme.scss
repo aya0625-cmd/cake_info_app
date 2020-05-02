@@ -11,13 +11,13 @@ $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: #404040 !default;
-$slick-dot-color: #404040 !default;
+$slick-dot-color: #e3acae !default;
 $slick-dot-color-active: $slick-dot-color !default;
 $slick-prev-character: "\2190" !default;
 $slick-next-character: "\2192" !default;
 $slick-dot-character: "\2022" !default;
-$slick-dot-size: 50px !default;
-$slick-opacity-default: 0.75 !default;
+$slick-dot-size: 60px !default;
+$slick-opacity-default: 0.7 !default;
 $slick-opacity-on-hover: 1 !default;
 $slick-opacity-not-active: 0.25 !default;
 
@@ -64,23 +64,24 @@ $slick-opacity-not-active: 0.25 !default;
 .slick-next {
     position: absolute;
     display: block;
-    height: 20px;
-    width: 20px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
     line-height: 0px;
     font-size: 0px;
     cursor: pointer;
-    background: transparent;
+    border: 1px solid #fff;
     color: transparent;
     top: 50%;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
     padding: 0;
-    border: none;
     outline: none;
+    z-index: 1;
     &:hover, &:focus {
         outline: none;
-        background: transparent;
         color: $slick-arrow-color;
         &:before {
             opacity: $slick-opacity-on-hover;
@@ -91,20 +92,21 @@ $slick-opacity-not-active: 0.25 !default;
     }
     &:before {
         font-family: $slick-font-family;
-        font-size: 40px;
+        font-size: 50px;
         line-height: 1;
         color: $slick-arrow-color;
         opacity: $slick-opacity-default;
+        -webkit-text-stroke: 0.5rem  #fff;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 }
 
 .slick-prev {
-    left: -45px;
+    left: 20px;
     [dir="rtl"] & {
         left: auto;
-        right: -25px;
+        right: -20px;
     }
     &:before {
         content: "\f053";
@@ -116,9 +118,9 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
-    right: -35px;
+    right: 20px;
     [dir="rtl"] & {
-        left: -25px;
+        left: 20px;
         right: auto;
     }
     &:before {
