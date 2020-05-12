@@ -1,0 +1,50 @@
+.search-main
+  =render "messages/header"
+  .show-massage
+    .news-img
+      =image_tag "#{@news.image}"
+      .nei
+        =@news.title 
+      .news-category
+        %p
+          = @news.category.name
+        .good{:id => "goods_buttons_#{@news.id}"}
+          = render partial: "goods/good", locals: {message: @news}
+      .text-news
+        =@news.text
+    .ranking-lists.fade
+      %p Daily Ranking
+      %hr
+      %li
+        %span.rank 1
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image10.jpg"
+          %p ミレニアル世代の価値観は違う ー 女性の働き方や悩みとは？
+      %li
+        %span.rank 2
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image3.jpg"
+          %p  職場のコミュニケーション不足で起こる2つの問題＆すぐできる対策法
+      %li
+        %span.rank 3
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image8.jpg"
+          %p  言いたいことが言えないのはなぜ？ 心理と自己主張のコツ
+      %li
+        %span.rank 4
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image7.jpg"
+          %p  理想の自分になるには。今日から理想の自分に近づく5STEP 
+      %li
+        %span.rank 5
+        =link_to "#", class: "ranking-lists_1" do
+          .news_image
+            =image_tag "image9.jpg"
+          %p  楽しい人生を送るために。つまらない毎日からの脱却法 
+  .wrapper 
+    = render "footer"
+    

@@ -1,0 +1,117 @@
+.search-main {
+  .show-massage {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    width: 100%;
+    .news-img {
+      @include size(100%, 50%, 0);
+      img {
+        @include size(400px, 100%, 0);
+        object-fit: cover;
+      }
+      .nei {
+        @include size(100%, 100%, 0);
+        font-size: 1.6rem;
+        margin-top: 30px;
+        font-weight: 300;
+        letter-spacing: .04em;
+      }
+      .news-category {
+        @include size(30px, 100%, 0);
+        margin-top: 20px;
+        margin-bottom: 30px;
+        p {
+          float: right;
+          text-align: right;
+          @include size(100%, 50%, 0);
+          font-size: 1.2rem;
+          color: #e3acae;
+          padding-right: 5px;
+        }
+        .good {
+          float: left;
+          @include size(100%, 50%, 0);
+          .good-botton {
+            text-decoration: none;
+            color: #e3acae;
+            font-size: 1.4rem;
+          }
+        }
+      }
+      .text-news {
+        @include size(100%, 100%, 0);
+        font-size: 0.9rem;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        color: #5e5e5e;
+        letter-spacing: .04em;
+      }
+      .toc {
+        @include size(100%, 100%, 0);
+      }
+    }
+    .ranking-lists {
+      margin-left: 30px;
+      width: 25%;
+      float: right;
+      p {
+        color: #5e5e5e;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 2px;
+      }
+      hr {
+        width: 15%;
+        text-align: center;
+      }
+      li {
+        @include size(130px, 100%, 0);
+        list-style: none;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #a0a0a0;
+        position: relative;
+        opacity: 1;
+        span {
+          @include size(30px, 30px, 0);
+          background-color: #e3acae;
+          color: #fff;
+          text-align: center;
+          line-height: 30px;
+          position: absolute;
+          top: 10px;
+          z-index: 1;
+
+        }
+        .ranking-lists_1 {
+          display: block;
+          text-decoration: none;
+          .news_image {
+            @include size(110px, 35%, 0);
+            margin-top: 10px;
+            background-color: #454545;
+            float: left;
+            img {
+              @include size(110px, 100%, 0);
+              object-fit: cover;
+            }
+          }
+          p {
+            @include size(50px, 60%, 0);
+            padding-left: 5px;
+            margin-top: 50px;
+            font-size: 0.8rem;
+            float: right;
+          }
+        }
+      }
+      li:hover {
+        opacity: .7;
+        -webkit-transition: all 0.5s ease; /* ふわっと表示 */
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all  0.5s ease;
+      }
+    }
+  }
+}

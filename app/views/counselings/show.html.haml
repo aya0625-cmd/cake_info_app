@@ -1,0 +1,42 @@
+.search-main
+  =render "messages/header"
+  .counseling
+    %h2 
+    .counseling-main
+      .counseling-main_mine
+        %p.counseling-main_mine-title
+          Counseling
+        %hr
+        .counseling-main_mine-image 
+          =image_tag "image1.jpg"
+          %p Community
+        .counseling-main_mine-list
+          .counseling-main_mine-list_user
+            %p.t Name 
+            .user-name 
+              = @counseling.user.name 
+          .counseling-main_mine-list_re
+            %p.t Title
+            .title 
+              = @counseling.title
+          .counseling-main_mine-list_text
+            %p.t Content
+            .longtext
+              =@counseling.text
+      .counseling-main_comment 
+        %p.counseling-main_mine-title
+          Advice
+        %hr
+        =form_for [@counseling, @comment], html: { class: "comment-form"} do |f|
+          .form
+            = f.text_area :text, placeholder: "アドバイスする", rows: "2", cladss: "textarea"
+            .submit
+              = f.submit "SEND", class: "submit-btn"
+      .counseling-main_comments 
+        %ul.comment-area
+          - if @comments
+            - @comments.each do |comments|
+              .user-name 
+                = comments.user.name + "'s advice"
+              .comment-text
+                = comments.text

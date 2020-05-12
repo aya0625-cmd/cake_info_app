@@ -1,6 +1,6 @@
 class CounselingsController < ApplicationController
   def index
-    @counseling = Counseling.includes(:user).order('created_at DESC')
+    @counseling = Counseling.includes(:user)
   end
 
   def new
@@ -10,16 +10,21 @@ class CounselingsController < ApplicationController
   def create
     @counseling = Counseling.create(counseling_params)
     if @counseling.save!
-      redirect_to root_path
+      redirect_to  counselings_path
     else
       render :new
     end
+  end
 
+  def show 
+    @counseling = Counseling.find(params[:id])
+    @comment = Comment.new
+    @comments = @counseling.comments.includes(:user)
   end
 
   private
 
   def counseling_params
-    params.require(:counseling).permit(:kind, :text)
+    params.require(:counseling).permit(:kind, :text).merge(user_id: current_user.id)
   end
 end

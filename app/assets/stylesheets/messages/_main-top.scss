@@ -48,7 +48,7 @@
         text-align: center;
         width: 100%;
         font-family: 'Alegreya Sans SC', sans-serif;
-        color: #192f60;
+        color: #444444;
         font-size: 3rem;
         margin-top: 30px;
       }
@@ -61,10 +61,10 @@
         -webkit-transition: all 0.3s;
         transition: all 0.3s;
         ul {
-          display: flex;
-          justify-content: space-between;
-          max-width: 1000px;
+          max-width: 1100px;
           margin: auto;
+          display: flex;
+          justify-content: space-around;
           li {
             text-align: center;
             height: 40px;
@@ -77,7 +77,7 @@
             -o-transition: all 0.3s ease;
             transition: all  0.3s ease;
             .menu {
-              color: #404040;
+              color: #5e5e5e;
               text-decoration: none;
               font-size: 1.3rem;
               text-decoration: none;
@@ -134,19 +134,19 @@
           writing-mode: vertical-rl;
           font-size: 1rem;
           position: absolute;
-          right: 20px;
-          top: 400px;
-          color: #192f60;
+          right: 40px;
+          top: 300px;
+          color: #444444;
         }
         ul {
           position: absolute;
-          right: 20px;
-          top: 470px;
+          right: 40px;
+          top: 370px;
           li {
             list-style: none;
           }
           i {
-            color: #192f60;
+            color: #444444;
             font-size: 1.3rem;
             margin-bottom: 15px;
           }

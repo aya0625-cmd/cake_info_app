@@ -1,0 +1,15 @@
+.good-link
+  - if Good.find_by(user_id: current_user.id, message_id: @news.id)
+    .good-btn 
+      =link_to "/messages/#{@news.id}/goods", method: :delete, remote: true, class: 'good-botton' do
+        =icon("fas", "heart")
+        =@news.goods.count
+  -else 
+    .good-btn 
+      = link_to "/messages/#{@news.id}/goods", method: :post, remote: true, class: 'good-botton' do
+        =icon("far", "heart")
+        =@news.goods.count
+
+
+    
+       

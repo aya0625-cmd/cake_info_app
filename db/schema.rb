@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200428033937) do
+ActiveRecord::Schema.define(version: 20200508060942) do
 
   create_table "books", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text   "text",   limit: 65535
@@ -18,31 +18,54 @@ ActiveRecord::Schema.define(version: 20200428033937) do
     t.string "title"
   end
 
-  create_table "comments", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text    "text",          limit: 65535
-    t.integer "counseling_id"
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "jp"
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "text",          limit: 65535, null: false
+    t.integer  "counseling_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["counseling_id"], name: "index_comments_on_counseling_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "counselings", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text    "text", limit: 4294967295, null: false
-    t.integer "kind",                    null: false
+    t.text    "text",    limit: 4294967295, null: false
+    t.integer "kind",                       null: false
+    t.integer "user_id"
+    t.text    "title",   limit: 65535
+    t.index ["user_id"], name: "index_counselings_on_user_id", using: :btree
   end
 
-  create_table "goods", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "good_num"
+  create_table "goods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "message_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["message_id"], name: "index_goods_on_message_id", using: :btree
+    t.index ["user_id"], name: "index_goods_on_user_id", using: :btree
+  end
+
+  create_table "messages", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "text",        limit: 4294967295
+    t.text     "image",       limit: 65535
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_messages_on_category_id", using: :btree
   end
 
   create_table "movies", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.string "author"
     t.text   "text",   limit: 65535
-  end
-
-  create_table "news", unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "title"
-    t.text   "text",  limit: 4294967295
-    t.text   "image", limit: 65535
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -74,4 +97,6 @@ ActiveRecord::Schema.define(version: 20200428033937) do
     t.index ["user_id"], name: "index_stores_on_user_id", using: :btree
   end
 
+  add_foreign_key "counselings", "users"
+  add_foreign_key "messages", "categories"
 end

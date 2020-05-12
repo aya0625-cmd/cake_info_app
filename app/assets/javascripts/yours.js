@@ -49,6 +49,23 @@ $(function () {
   });
 });
 
+$(function () {
+  var header = $('#top-header2');
+  var adclass = 'scrolled';
+  var scrollY = 200;
+   
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > scrollY) {
+      header.addClass(adclass).fadeIn(6000);
+      
+    } else {
+      header.removeClass(adclass);
+      
+    }
+  });
+});
+
+
 // スクロール表示
 $(function () {
   $(window).scroll(function () {

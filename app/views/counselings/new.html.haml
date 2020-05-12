@@ -4,7 +4,7 @@
     =form_for @counseling do |f| 
       .counseling-category
         %p 相談したいジャンルを選んでね。
-        =f.select :kind, Category.all.map { |pre| [pre.name, pre.id] },{include_blank: "相談したいジャンル"}
+        =f.select :kind, List.all.map { |pre| [pre.name, pre.id] },{include_blank: "相談したいジャンル"}
       .counseling-text 
         %p どんなことで悩んでいるの？
         = f.text_area :text, class: "text_field"

@@ -1,0 +1,45 @@
+.top-mine
+  .hamburger      
+    .hamburger-btn
+      %span
+      %span
+      %span
+    %nav.global-nav
+      %ul.menu 
+        -if user_signed_in? && current_user.id 
+          %li
+            =link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "menu-list"
+          %li 
+            =link_to "SETUP", "#", class: "menu-list"
+        -else 
+          %li
+            =link_to "SIGNUP", new_user_registration_path, class: "menu-list"
+          %li 
+            =link_to "SIGNIN", new_user_session_path, class: "menu-list"
+  .search_form
+    = form_tag(search_messages_path,:method => 'get') do |f| 
+      = text_field_tag :keyword,'', placeholder: "Search", class: "text_field" 
+      =button_tag "", type: 'submit', class: "button" do
+        .icon
+          =icon("fas", "search")
+  .category-list
+    %p.title HEROINE
+    %header#top-header 
+      %ul
+        - @category.each do |n|
+          %li
+            %br
+              = n.jp
+            =link_to "#{n.name}", category_messages_path(n), class: "menu" 
+    .share
+      %p Share
+      %ul
+        %li 
+          =link_to "https://twitter.com" do |f|
+            =icon("fab","twitter", class: "twitter")
+        %li 
+          =link_to "https://www.facebook.com/" do |f|
+            =icon("fab","facebook", class: "facebook")
+        %li 
+          =link_to "https://www.instagram.com" do |f|
+            =icon("fab","instagram", class: "instagram")

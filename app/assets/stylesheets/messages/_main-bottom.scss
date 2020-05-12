@@ -57,6 +57,8 @@ html,body {
       transform : translate(0, 0);
     }
     .news1 {
+      @include size(400px, 1100px, 0);
+      margin: auto;
       &-list {
         margin-bottom: 70px;
         margin: auto;
@@ -67,7 +69,7 @@ html,body {
             list-style: none;
             position: relative;
             img {
-              @include size(450px, 98%, 0);
+              @include size(400px, 98%, 0);
               object-fit: cover;
               opacity: 1;
             }
@@ -97,13 +99,19 @@ html,body {
       &-lists {
         width: 50%;
         margin-bottom: 40px;
+        position: relative;
+        p.category_sa {
+          margin-bottom: 10px;
+          font-size: 1.7rem;
+          color: #5e5e5e;
+        }
         .news-title {
           text-align: center;
           margin-bottom: 10px;
           font-size: 1.5rem;
           color: #5e5e5e;
          }
-         hr {
+         hr.shot {
           width: 6%;
           text-align: center;
         }
@@ -112,9 +120,10 @@ html,body {
           width: 100%;
           display: flex;
           justify-content: space-between;
+          flex-wrap: wrap;
           margin-top: 20px;
           li {
-            @include size(300px, 220px, 0);
+            @include size(300px, 32%, 0);
             position: relative;
             opacity: 1;
             a {
@@ -125,7 +134,7 @@ html,body {
               .effect-color {
                 background: linear-gradient(to top, #91c2f0 0%, #f3f0f0 0%, #e7eee6 100%);
                 img {
-                  @include size(200px, 220px, 0);
+                  @include size(150px, 100%, 0);
                   object-fit: cover;
                   transform: scale(1);
                   -webkit-transition: .3s ease-in-out;
@@ -135,20 +144,42 @@ html,body {
                   transform: scale(1.1);
                 }
                 .news-message {
-                  @include size(30%, 100%, 0);
+                  @include size(100px, 100%, 0);
+                  display: block;
+                  margin-bottom: 10px;
                   padding: 0 5px;
                   position: absolute;
                   right: 0;
                   &_text {
+                    @include size(20%, 100%, 0);
                     font-size: 0.8rem;
                     color: #5e5e5e;
+                    margin-top: 5px;
+                  }
+                  .news-category {
+                    @include size(20%, 100%, 0);
+                    position: absolute;
+                    bottom: -10px;
+                    padding: 0 5px;
+                    p {
+                      float: right;
+                      width: 40%;
+                      font-size: 1.1rem;
+                      color: #e3acae;
+                      text-align: right;
+                    }
+                    .good-link {
+                     float: left;
+                     width: 40%;
+                     color: #e3acae;
+                    }
                   }
                 }
               }
             } 
           }
           li:hover {
-            opacity: .7;
+            opacity: .6;
             -webkit-transition: all 0.5s ease; /* ふわっと表示 */
             -moz-transition: all 0.5s ease;
             -o-transition: all 0.5s ease;
@@ -156,12 +187,15 @@ html,body {
           }
         }
         .more {
-          @include size(40px, 300px, 10px 0);
+          @include size(40px, 40%, 10px 0);
           background-color: white;
           list-style: none;
           text-align: center;
           margin: auto;
           border: 0.8px solid #5e5e5e;
+          position: absolute;
+          bottom: 0;
+          left: 30%;
           a {
             text-decoration: none;
             color: #5e5e5e;

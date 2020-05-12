@@ -47,8 +47,7 @@
         =link_to "#", class: "menu" do
           Other 
   .slide-counseling
-    
-    
-
+    - @counseling.each do |counseling|
+      =link_to "#{counseling.text}", " /counselings/#{counseling.id}", method: :get
 
   

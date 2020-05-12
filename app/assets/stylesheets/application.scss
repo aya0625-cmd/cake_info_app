@@ -1,14 +1,19 @@
 @import "reset";
 
-@import "main-bottom";
-@import "main-top";
+@import "messages/main-bottom";
+@import "messages/main-top";
+@import "messages/search-news";
+@import "messages/main-header";
+@import "messages/show";
+
 @import "modules/user";
-@import "loading";
-@import "form-counseling";
-@import "top-counseling";
+
+@import "counselings/form-counseling";
+@import "counselings/top-counseling";
+@import "counselings/show-counseling";
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "slick-theme"; 
 @import "slick";
-
+@import "loading";
