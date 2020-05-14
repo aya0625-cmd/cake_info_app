@@ -15,7 +15,7 @@ Heroine 〜働く女性を支える情報&相談サイト
 ![a2c615d2c7c36e16dc585d25aad614ca](https://user-images.githubusercontent.com/58415130/81924196-c152cf80-9619-11ea-8ca5-7236d8b7e919.gif)
 
 
-### ↓検索機能
+### ↓キーワード検索機能
 
 ![f374afd359c1d278cb2d45debf5a460b](https://user-images.githubusercontent.com/58415130/81925186-23600480-961b-11ea-8497-34bbb3883a21.gif)
 
