@@ -5,7 +5,7 @@ $(window).load(function () {   // ローディング画面の消えるタイミ�
       $(this).fadeIn(600)
     });
   },1000);             
-  $('#is-loading').delay(3000).fadeOut(2000); 
+  $('#is-loading').delay(3000).fadeOut(1000); 
 });
 
 function stopload(){                        // 読み込めない場合、強制的にフェードアウト

@@ -5,6 +5,7 @@
     height: 100%;
     width: 100%;
     margin-bottom: 70px;
+    margin-top: 50px;
     position: relative;
     .search_form {
       position: absolute;
@@ -44,13 +45,14 @@
     .category-list {
       height: auto;
       z-index: 2;
+      text-align: center;
       .title {
-        text-align: center;
         width: 100%;
         font-family: 'Alegreya Sans SC', sans-serif;
         color: #444444;
         font-size: 3rem;
         margin-top: 30px;
+        text-decoration: none;
       }
       #top-header {
         width: 100%;
@@ -95,7 +97,7 @@
               content: '';
               width: 100%;
               height: 2px;
-              background: #d9aacd;
+              background: #e3acae;
               transform: scale(0, 1);
               transform-origin: center top;
               transition: transform .3s;
@@ -104,11 +106,11 @@
               transform: scale(1, 1);
             }
             .menu:hover {
-              color: #d9aacd;
+              color: #e3acae;
             }
           }
           li:hover {
-            color: #d9aacd;
+            color: #e3acae;
           }
         }
       }
@@ -126,7 +128,7 @@
           display: none;
         }
         li:hover {
-          color: #d9aacd;
+          color: #e3acae;
         }
       }
       .share {
@@ -164,10 +166,9 @@
     }
     .hamburger {
       nav {
-        font-family: 'HCo Gotham', sans-serif;
         height: 100%;
         width: 100%;
-        background: rgba($color: #a4c1d7, $alpha: 0.5);
+        background: rgba($color: #e3acae, $alpha: 0.6);
         position: fixed;
         top: 0;
         z-index: 2;
@@ -196,6 +197,7 @@
             .menu-list {
               color: white;
               text-decoration: none;
+              font-size: 2rem;
             }
           }
         }

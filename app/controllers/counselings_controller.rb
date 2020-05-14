@@ -1,6 +1,6 @@
 class CounselingsController < ApplicationController
   def index
-    @counseling = Counseling.includes(:user)
+    @counseling = Counseling.includes(:user).order("created_at DESC").limit(9)
   end
 
   def new

@@ -27,7 +27,7 @@
         background-position: right 15px center;
       }
       select:focus {
-        border: 1px solid #00ac97;
+        border: 1px solid #e3acae;
         outline: 0;
       }
     }
@@ -41,7 +41,7 @@
         border-radius: 5px;
       }
       textarea:focus {
-        border: 1px solid #00ac97;
+        border: 1px solid #e3acae;
         outline: 0;
       }
     }
@@ -60,13 +60,18 @@
         font-weight: bold;
         margin:0 auto;
         margin-bottom: 10px;
-        background-color: #00ac97;
+        background-color: white;
         border-radius: 5px;
-        color: white;
+        color: #606060;
         cursor: pointer;
       }
       .button:hover {
-        background-color: #00947a;
+        background-color: #e3acae;
+        color: white;
+        -webkit-transition: all 0.3s ease; /* ふわっと表示 */
+        -moz-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all  0.3s ease;
       }
       a {
         color: #606060;

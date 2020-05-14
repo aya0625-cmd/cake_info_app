@@ -8,14 +8,16 @@
       %ul.menu 
         -if user_signed_in? && current_user.id 
           %li
-            =link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "menu-list"
+            =link_to "Logout", destroy_user_session_path, method: :delete, class: "menu-list"
           %li 
-            =link_to "SETUP", "#", class: "menu-list"
+            =link_to "Setup", "#", class: "menu-list"
+          %li 
+            =link_to "Counseling", new_counseling_path, class: "menu-list"
         -else 
           %li
-            =link_to "SIGNUP", new_user_registration_path, class: "menu-list"
+            =link_to "SIGNUP 〜ログイン〜", new_user_registration_path, class: "menu-list"
           %li 
-            =link_to "SIGNIN", new_user_session_path, class: "menu-list"
+            =link_to "SIGNIN 〜新規登録〜", new_user_session_path, class: "menu-list"
   .search_form
     = form_tag(search_messages_path,:method => 'get') do |f| 
       = text_field_tag :keyword,'', placeholder: "Search", class: "text_field" 
@@ -23,7 +25,8 @@
         .icon
           =icon("fas", "search")
   .category-list
-    %p.title HEROINE
+    =link_to "HEROINE",root_path, class: "title"
+    %header#top-header2
     %header#top-header 
       %ul
         - @category.each do |n|

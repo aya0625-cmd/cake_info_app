@@ -1,4 +1,27 @@
+.wrapper
+  .top-mine
+    .hamburger      
+      .hamburger-btn
+        %span
+        %span
+        %span
+      %nav.global-nav
+        %ul.menu 
+          -if user_signed_in? && current_user.id 
+            %li
+              =link_to "Logout", destroy_user_session_path, method: :delete, class: "menu-list"
+            %li 
+              =link_to "Setup", "#", class: "menu-list"
+            %li 
+              =link_to "Counseling", new_counseling_path, class: "menu-list"
+          -else 
+            %li
+              =link_to "SIGNUP 〜ログイン〜", new_user_registration_path, class: "menu-list"
+            %li 
+              =link_to "SIGNIN 〜新規登録〜", new_user_session_path, class: "menu-list"
 .main-counselings
+  .top-mine
+    =link_to "HEROINE",root_path, class: "title2"
   %header#top-header 
     .message みんなの悩み、みてみよう。
     %ul
@@ -46,8 +69,15 @@
         %br その他
         =link_to "#", class: "menu" do
           Other 
-  .slide-counseling
+.slide-counseling
+  .slide-counseling_ul
     - @counseling.each do |counseling|
-      =link_to "#{counseling.text}", " /counselings/#{counseling.id}", method: :get
-
+      =link_to " /counselings/#{counseling.id}", method: :get, class: "lists" do
+        =image_tag "image5.jpg", width: "100%", height: "150px"
+        .counseling-text
+          = counseling.text
+        .counseling-name
+          = counseling.user.name
+.wrapper 
+  = render "messages/footer"
   
